@@ -41,6 +41,9 @@ jobs:
       - uses: actions/checkout@master
         with:
           name: duplocloud/docs
+      - name: list files
+        run: |
+            ls -ltr
           
         
 
