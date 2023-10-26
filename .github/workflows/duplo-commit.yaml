@@ -38,3 +38,9 @@ jobs:
       - name: actor name
         run: |
             echo "${GITHUB_ACTOR}"
+      - uses: actions/checkout@master
+        with:
+          name: duplocloud/docs
+          
+        
+
