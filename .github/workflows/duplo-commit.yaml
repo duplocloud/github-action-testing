@@ -40,12 +40,13 @@ jobs:
             echo "${GITHUB_ACTOR}"
       - uses: actions/checkout@master
         with:
-          name: duplocloud/docs
+          repository: duplocloud/docs
           path: ./docs
           submodules: recursive
       - name: list files
         run: |
             ls -ltr
+            ls -ltr docs/
           
         
 
