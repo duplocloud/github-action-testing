@@ -6,6 +6,9 @@ on:
       - "feature/*"
       - "bug/*"
 
+env:
+  allowed_users: "${{secrets.PROD_DEPLOYMENT_APPOVERS}}"
+
 jobs:
   build:
     name: Build
@@ -38,6 +41,16 @@ jobs:
       - name: actor name
         run: |
             echo "${GITHUB_ACTOR}"
+            for author_name in ${{vars.PROD_DEPLOYMENT_APPOVERS_ENV}}
+            do
+              if [[ "${GITHUB_ACTOR}" == *"$author_name"* ]]; then
+                echo "User $author is Authorized."
+                break
+              else
+                printf '%s\n' "User ${author_name} is not allowed to run this workflow."
+                exit 1
+              fi
+            done
       - uses: actions/checkout@master
         with:
           repository: duplocloud/docs
