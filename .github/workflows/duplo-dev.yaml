@@ -73,4 +73,4 @@ jobs:
           environment: production
           branch: ${{ github.ref }}
           deployed_by: ${{ github.actor }}
-          slack_webhook_url: "https://hooks.slack.com/services/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"
+          SLACK_WEBHOOK: "https://hooks.slack.com/services/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"
