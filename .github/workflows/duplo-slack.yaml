@@ -18,10 +18,4 @@ jobs:
       - name: Slack Notification
         uses: rtCamp/action-slack-notify@v2
         env:
-          SLACK_COLOR: ${{ job.status }} # or a specific color like 'good' or '#ff00ff'
-          SLACK_MSG_AUTHOR: ${{ github.actor }}
-          SLACK_ICON: https://github.com/rtCamp.png?size=48
-          SLACK_MESSAGE: 'Post Content :rocket:'
-          SLACK_TITLE: Deployment Status of sturdy-waffle
-          SLACK_USERNAME: GitHubAction
           SLACK_WEBHOOK: "https://hooks.slack.com/services/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"
