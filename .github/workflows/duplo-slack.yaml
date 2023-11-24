@@ -1,4 +1,4 @@
-name: Build-And-Deploy-Develop
+name: Build-And-Deploy-Slack
 on:
   workflow_dispatch:
   pull_request:
