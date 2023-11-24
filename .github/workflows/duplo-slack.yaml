@@ -15,6 +15,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Slack Notification
-        uses: rtCamp/action-slack-notify@v2
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          text: "Deployment of <Repository>"
+          author_name: "Subhash"
         env:
-          SLACK_WEBHOOK: ${{ secrets.APP0_SLACK_WEBHOOK }}
+          SLACK_WEBHOOK_URL: ${{ secrets.APP0_SLACK_WEBHOOK }}
+        if: always()
